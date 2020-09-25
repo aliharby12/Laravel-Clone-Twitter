@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Tweet;
 
 class User extends Authenticatable
 {
@@ -26,14 +27,19 @@ class User extends Authenticatable
 
     public function timeline()
     {
+      $ids = $this->follows()->pluck('id');
+      $ids->push($this->id);
 
-      return \App\Tweet::where('user_id', $this->id)->latest()->get();
-
+      return Tweet::whereIn('user_id', $ids)->latest()->get();
     }
 
+    public function tweets()
+    {
+      return $this->hasMany(Tweet::class);
+    }
     public function follow(User $user)
     {
-       return $this->follows()->save($user);
+      return $this->follows()->save($user);
 
     }
 

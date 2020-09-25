@@ -1,7 +1,7 @@
-<h3 class="font-bold text-xl mb-4">Friends</h3>
+<h3 class="font-bold text-xl mb-4">Following</h3>
 
 <ul>
-  @foreach (range(1, 8) as $index)
+  @foreach (auth()->user()->follows as $user)
 
     <li>
       <div class="flex mb-4 items-center text-sm">
@@ -9,7 +9,7 @@
 
         alt="" style="height:40px" class="mr-2 rounded-full">
 
-          Ali Harby
+          {{ $user->name }}
       </div>
     </li>
 

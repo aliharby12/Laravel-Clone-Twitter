@@ -5,14 +5,9 @@
 
     <li>
       <div class="flex mb-4 items-center text-sm">
-        <img
+        <img src="/images/profile.jpg"
 
-          src="/images/profile.jpg"
-
-          alt=""
-          style="height:20px"
-          class="rounded-full mr-2"
-          >
+        alt="" style="height:40px" class="mr-2 rounded-full">
 
           Ali Harby
       </div>

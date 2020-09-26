@@ -13,6 +13,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+
 /* Sections
    ========================================================================== */
 
@@ -22,6 +23,8 @@ html {
 
 body {
   margin: 0;
+  background-color: #1d2b42;
+  color: #ffffff;
 }
 
 /**

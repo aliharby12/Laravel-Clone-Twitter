@@ -33,21 +33,33 @@ class User extends Authenticatable
       return Tweet::whereIn('user_id', $ids)->latest()->get();
     }
 
+
     public function tweets()
     {
       return $this->hasMany(Tweet::class);
-    }
+    } //end of tweets
+
+
     public function follow(User $user)
     {
       return $this->follows()->save($user);
+    } //end of follow
 
-    }
 
     public function follows()
     {
-
       return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
+    } //end of follws
 
-    }
 
+    public function getRouteKeyName()
+    {
+      return 'name';
+    } //end of getRouteKeyName
+
+
+    public function getNameAttribute($value)
+    {
+        return ucfirst($value);
+    } //end of getNameAttribute
 }

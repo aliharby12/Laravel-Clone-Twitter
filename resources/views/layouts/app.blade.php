@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
@@ -32,7 +33,28 @@
 
         <section class="px-8">
           <main class="container mx-auto">
-              @yield('content')
+
+            <div class="lg:flex lg:justify-between">
+
+              <div class="lg:w-32">
+                @include('_sidebar-links')
+              </div>
+              {{-- end of _sidebar div --}}
+
+              <div class="lg:flex-1 lg:mx-10" style="max-width:700px">
+                @yield('content')
+              </div>
+              {{-- end of feeds and timeline --}}
+
+
+              <div class="lg:w-1/6 rounded-lg p-4">
+                @include('_friends-list')
+              </div>
+              {{-- end of friends div --}}
+
+            </div>
+            {{-- end of base div --}}
+
           </main>
         </section>
     </div>

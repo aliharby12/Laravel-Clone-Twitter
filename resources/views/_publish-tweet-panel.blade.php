@@ -3,9 +3,8 @@
   <form action="/tweets" method="POST">
     @csrf
 
-    <textarea name="body" class="w-full p-10" placeholder="Let's Tweet!"></textarea>
+    <textarea name="body" class="w-full p-10 my-4" placeholder="Let's Tweet!" style="border-radius:8px; background-color: #1d2b42"></textarea>
 
-    <hr class="my-4">
 
     <footer class="flex justify-between">
       <img src="/images/profile.jpg" alt="my avatar" style="height:40px" class="rounded-full mr-2">

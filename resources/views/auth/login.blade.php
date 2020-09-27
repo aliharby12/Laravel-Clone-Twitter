@@ -1,13 +1,12 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
+    <div class="row">
+        <div class="col-md-12 card-header">
+                <div class="mb-5 font-bold">{{ __('Login Page') }}</div>
+                <hr class="mb-5">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -70,4 +69,8 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 @endsection

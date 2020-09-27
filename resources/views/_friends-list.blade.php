@@ -5,7 +5,7 @@
 
     <li>
       <a href="{!! route('profile', $user) !!}">
-        <div class="flex mb-4 items-center text-sm">
+        <div class="flex mb-4 items-center text-sm font-bold">
           <img src="/images/profile.jpg"
           alt="" style="height:40px" class="mr-2 rounded-full">
             {{ $user->name }}

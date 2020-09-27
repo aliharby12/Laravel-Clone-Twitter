@@ -9,7 +9,7 @@
     <footer class="flex justify-between">
       <img src="/images/profile.jpg" alt="my avatar" style="height:40px" class="rounded-full mr-2">
 
-      <button type="submit" name="button" class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white">Tweet</button>
+      <button type="submit" name="button" class="bg-blue-500 rounded-full shadow py-2 px-2 text-white">Tweet</button>
     </footer>
 
   </form>

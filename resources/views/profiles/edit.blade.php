@@ -47,9 +47,21 @@
         Avatar
       </label>
 
-      <input type="file" name="avatar" class="border border-blue-400 rounded-full p-2 w-full bg-white" required>
+      <input type="file" name="avatar" class="border border-blue-400 rounded-full p-2 w-full bg-white">
 
-      @error('email')
+      @error('avatar')
+        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+      @enderror
+    </div>
+
+    <div class="mb-6">
+      <label for="cover" class=" block mb-2 ml-2 uppercase font-bold text-xs text-white">
+        Cover Image
+      </label>
+
+      <input type="file" name="cover" class="border border-blue-400 rounded-full p-2 w-full bg-white">
+
+      @error('cover')
         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
       @enderror
     </div>
@@ -59,7 +71,7 @@
         Password
       </label>
 
-      <input type="password" name="password" value="" class="border border-blue-400 rounded-full p-2 w-full" required>
+      <input type="password" name="password" value="" class="border border-blue-400 rounded-full p-2 w-full">
 
       @error('password')
         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -71,7 +83,7 @@
         Password Confirmation
       </label>
 
-      <input type="password" name="password_confirmation" value="" class="border border-blue-400 rounded-full p-2 w-full" required>
+      <input type="password" name="password_confirmation" value="" class="border border-blue-400 rounded-full p-2 w-full">
 
       @error('password_confirmation')
         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>

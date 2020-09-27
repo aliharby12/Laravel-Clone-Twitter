@@ -12,7 +12,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'username', 'name', 'email', 'password', 'avatar'
+        'username', 'name', 'email', 'password', 'avatar', 'cover'
     ];
 
     protected $appends = ['avatar_path'];
@@ -75,5 +75,10 @@ class User extends Authenticatable
     public function getAvatarPathAttribute()
     {
         return asset('uploads/avatars/' . $this->avatar);
+    }
+
+    public function getCoverPathAttribute()
+    {
+        return asset('uploads/covers/' . $this->cover);
     }
 }

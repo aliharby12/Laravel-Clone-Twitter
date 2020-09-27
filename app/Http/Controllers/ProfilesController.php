@@ -59,7 +59,7 @@ class ProfilesController extends Controller
         ]
       ]);
 
-      $data = $request->except(['password', 'password_confirmation', 'avatar']);
+      $data = $request->except(['password', 'password_confirmation', 'avatar', 'cover']);
       $data['password'] = bcrypt($request->password);
 
       if ($request->avatar) {
@@ -70,6 +70,16 @@ class ProfilesController extends Controller
         ->save(public_path('uploads/avatars/' . $request->avatar->hashname()));
 
         $data['avatar'] = $request->avatar->hashName();
+      }
+
+      if ($request->cover) {
+        Image::make($request->cover)
+        ->resize(300, null, function($constraint) {
+          $constraint->aspectRatio();
+        })
+        ->save(public_path('uploads/covers/' . $request->cover->hashname()));
+
+        $data['cover'] = $request->cover->hashName();
       }
 
       $user->update($data);

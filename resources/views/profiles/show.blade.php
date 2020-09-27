@@ -2,7 +2,7 @@
 
 @section('content')
   <header class="mb-10 relative">
-    <img src="/images/background.jpg"
+    <img src="{{ $user->cover_path }}"
     alt="Profile background" style="width:100%;border-radius: 20px;" class="mb-2">
 
     <div class="flex justify-between mb-3 mt-8 items-center">

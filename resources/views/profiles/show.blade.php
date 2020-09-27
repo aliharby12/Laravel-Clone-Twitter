@@ -13,15 +13,19 @@
       </div>
 
       <div class="flex">
-        <a href="" class="bg-green-500 rounded-full shadow py-2 px-2 text-white">Edit Profile</a>
-        <form method="POST" action="/profiles/{{ $user->name }}/follow">
-          @csrf
+        @if (auth()->user()->is($user))
+          <a href="{!! route('edit', $user) !!}" class="bg-green-500 rounded-full shadow py-2 px-2 text-white">Edit Profile</a>
+        @endif
+        @unless (auth()->user()->is($user))
+          <form method="POST" action="/profiles/{{ $user->name }}/follow">
+            @csrf
 
-          <button type="submit"
-            class="bg-blue-500 rounded-full shadow py-2 px-2 text-white ml-2">
-            {{ auth()->user()->following($user) ? 'Unfollow Me' : 'Follow Me' }}
-          </button>
-        </form>
+            <button type="submit"
+              class="bg-blue-500 rounded-full shadow py-2 px-2 text-white ml-2">
+              {{ auth()->user()->following($user) ? 'Unfollow Me' : 'Follow Me' }}
+            </button>
+          </form>
+        @endunless
       </div>
     </div>
 

@@ -1,7 +1,7 @@
 <h3 class="font-bold text-xl mb-4"><i class="fa fa-users mr-2"></i>Following</h3>
 
 <ul>
-  @foreach (auth()->user()->follows as $user)
+  @forelse (auth()->user()->follows as $user)
 
     <li>
       <a href="{!! route('profile', $user) !!}">
@@ -12,6 +12,7 @@
         </div>
       </a>
     </li>
-
-  @endforeach
+  @empty
+    <h1 class="font-bold">No Following User yet</h1>
+  @endforelse
 </ul>

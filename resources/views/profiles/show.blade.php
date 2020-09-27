@@ -29,7 +29,7 @@
       </div>
     </div>
 
-      <img src="/images/profile.jpg"
+      <img src="{{ $user->avatar_path }}"
       alt="" class="mr-2 absolute"
       style="width: 130px; left:calc(50% - 75px); top:55%; border-radius:50%"
       >

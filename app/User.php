@@ -12,9 +12,10 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'name', 'email', 'password', 'avatar'
     ];
 
+    protected $appends = ['avatar_path'];
 
     protected $hidden = [
         'password', 'remember_token',
@@ -70,4 +71,9 @@ class User extends Authenticatable
     {
         return ucfirst($value);
     } //end of getNameAttribute
+
+    public function getAvatarPathAttribute()
+    {
+        return asset('uploads/avatars/' . $this->avatar);
+    }
 }

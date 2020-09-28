@@ -102,9 +102,13 @@
       @enderror
     </div>
 
-    <div class="mb-6">
-      <button type="submit" class="bg-blue-400 rounded-full ml-2 text-white py-2 px-4 hover:bg-blue-500">Submit</button>
+    <div class="flex justify-between mb-3 mt-8 items-center">
+      <div class="mb-6">
+        <button type="submit" class="bg-blue-400 rounded-full ml-2 text-white py-2 px-10 hover:bg-blue-500">Submit</button>
+        <a href="{!! route('profile', $user) !!}" class="bg-red-400 rounded-full mr-2 text-white py-2 px-10 hover:bg-red-500">Cancle</a>
+      </div>
     </div>
+
   </form>
 
 @endsection

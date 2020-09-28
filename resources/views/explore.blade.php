@@ -13,4 +13,7 @@
       </a>
     @endforeach
   </div>
+  <div class="flex justify-center border border-blue-300 rounded-full">
+    <h1 class="font-bold">{{ $users->links() }}</h1>
+  </div>
 @endsection

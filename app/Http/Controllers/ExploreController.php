@@ -11,7 +11,7 @@ class ExploreController extends Controller
     {
 
       return view('explore', [
-        'users' => User::latest()->get()
+        'users' => User::latest()->paginate(5)
       ]);
     }
 }

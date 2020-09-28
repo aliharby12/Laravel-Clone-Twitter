@@ -9,7 +9,7 @@
     <footer class="flex justify-between">
       <img src="{{ auth()->user()->avatar_path }}" alt="my avatar" style="height:40px" class="rounded-full mr-2">
 
-      <button type="submit" name="button" class="bg-blue-500 rounded-full shadow py-2 px-2 text-white">Tweet</button>
+      <button type="submit" name="button" class="bg-blue-500 rounded-full shadow py-2 px-5 text-white text-sm hover:bg-blue-700">Tweet</button>
     </footer>
 
   </form>

@@ -28,25 +28,6 @@
                   <img src="/images/logo.png" alt="Twitter" style="height:50px">
                 </a>
               </div>
-              <div class="flex mr-5">
-                  <!-- Authentication Links -->
-                  @guest
-                    <a class="bg-blue-500 rounded-full shadow py-2 px-2 text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    @if (Route::has('register'))
-                      <a class="bg-blue-500 rounded-full shadow py-2 px-2 text-white ml-2" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    @endif
-                  @else
-                    <a class="bg-blue-500 rounded-full shadow py-2 px-2 text-white ml-2" href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                    </form>
-                  </div>
-                </li>
-              @endguest
           </div>
         </div>
         <section class="px-8">
@@ -68,7 +49,7 @@
 
 
               @if (auth()->check())
-                <div class="lg:w-1/6 rounded-lg p-4">
+                <div class="lg:w-1/6 rounded-lg">
                   @include('_friends-list')
                 </div>
               @endif

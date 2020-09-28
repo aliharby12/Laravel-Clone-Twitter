@@ -40,6 +40,11 @@ class ProfilesController extends Controller
           'max:255'
         ],
 
+        'description' => [
+          'string',
+          'max:255'
+        ],
+
         'email' => [
           'string',
           'required',
@@ -48,7 +53,9 @@ class ProfilesController extends Controller
           Rule::unique('users')->ignore($user)
         ],
 
-        'avatar' => 'required|file',
+        'avatar' => 'file',
+
+        'cover' => 'file',
 
         'password' => [
           'string',
@@ -67,17 +74,17 @@ class ProfilesController extends Controller
         ->resize(300, null, function($constraint) {
           $constraint->aspectRatio();
         })
-        ->save(public_path('uploads/avatars/' . $request->avatar->hashname()));
+        ->save(public_path('uploads/avatars/' . $request->avatar->hashname(), 100));
 
         $data['avatar'] = $request->avatar->hashName();
       }
 
       if ($request->cover) {
         Image::make($request->cover)
-        ->resize(300, null, function($constraint) {
+        ->resize(400, null, function($constraint) {
           $constraint->aspectRatio();
         })
-        ->save(public_path('uploads/covers/' . $request->cover->hashname()));
+        ->save(public_path('uploads/covers/' . $request->cover->hashname(), 100));
 
         $data['cover'] = $request->cover->hashName();
       }

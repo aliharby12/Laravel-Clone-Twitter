@@ -31,6 +31,18 @@
     </div>
 
     <div class="mb-6">
+      <label for="description" class=" block mb-2 ml-2 uppercase font-bold text-xs text-white">
+        Description
+      </label>
+
+      <input type="text" name="description" value="{{ $user->description }}" class="border border-blue-400 rounded-full p-2 w-full" required>
+
+      @error('description')
+        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+      @enderror
+    </div>
+
+    <div class="mb-6">
       <label for="email" class=" block mb-2 ml-2 uppercase font-bold text-xs text-white">
         Email
       </label>

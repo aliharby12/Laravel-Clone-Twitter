@@ -4,7 +4,7 @@
     <a class="font-bold text-lg mb-4 block" href="/tweets"><i class="fa fa-home mr-2"></i>Home</a>
   </li>
   <li>
-    <a class="font-bold text-lg mb-4 block" href="/"><i class="fa fa-search mr-2"></i>Explore</a>
+    <a class="font-bold text-lg mb-4 block" href="{!! route('explore') !!}"><i class="fa fa-search mr-2"></i>Explore</a>
   </li>
   <li>
     <a class="font-bold text-lg mb-4 block" href="/"><i class="fa fa-flag mr-2"></i>Notifics</a>

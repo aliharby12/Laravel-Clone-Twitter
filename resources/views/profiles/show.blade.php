@@ -10,6 +10,7 @@
         <h2 class="font-bold text-sxl bm-2">{{ $user->name }}</h2>
         <p class="text-sm">Joined {{ $user->created_at->diffForHumans() }}</p>
         <p class="text-sm">{{ $user->tweets->count() }} Tweets</p>
+        <p class="text-sm">{{ $user->follows->count() }} Following</p>
       </div>
 
       <div class="flex">
